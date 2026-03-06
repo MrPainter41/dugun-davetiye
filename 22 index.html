@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rüveyda & Ekrem</title>
+
+<style>
+
+body{
+margin:0;
+font-family: 'Georgia', serif;
+background:#000;
+color:white;
+text-align:center;
+overflow-x:hidden;
+}
+
+.hero{
+height:100vh;
+background:url("foto.jpg") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+position:relative;
+}
+
+.overlay{
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.45);
+backdrop-filter: blur(2px);
+}
+
+.content{
+position:relative;
+z-index:2;
+animation:fade 2s ease;
+}
+
+h1{
+font-size:38px;
+margin:10px;
+}
+
+.names{
+font-size:42px;
+font-weight:bold;
+margin:20px;
+}
+
+.btn{
+background:#c2185b;
+padding:14px 26px;
+border-radius:30px;
+color:white;
+text-decoration:none;
+font-size:18px;
+display:inline-block;
+margin-top:20px;
+}
+
+.section{
+padding:60px 20px;
+background:#fff;
+color:#333;
+}
+
+.countdown{
+font-size:28px;
+margin-top:20px;
+font-weight:bold;
+}
+
+.mapbtn{
+background:#c2185b;
+padding:12px 20px;
+border-radius:25px;
+color:white;
+text-decoration:none;
+display:inline-block;
+margin-top:20px;
+}
+
+.whatsapp{
+background:#25D366;
+padding:12px 20px;
+border-radius:25px;
+color:white;
+text-decoration:none;
+display:inline-block;
+margin-top:10px;
+}
+
+@keyframes fade{
+from{opacity:0; transform:translateY(20px)}
+to{opacity:1; transform:translateY(0)}
+}
+
+/* kalp animasyonu */
+
+.heart{
+position:fixed;
+bottom:-10px;
+font-size:20px;
+color:#ff4d6d;
+animation:hearts 6s linear infinite;
+}
+
+@keyframes hearts{
+0%{transform:translateY(0); opacity:1}
+100%{transform:translateY(-100vh); opacity:0}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="hero">
+
+<div class="overlay"></div>
+
+<div class="content">
+
+<h1>Düğünümüze Davetlisiniz</h1>
+
+<div class="names">
+Rüveyda Kuzu ❤ Ekrem Kıvanç
+</div>
+
+<a href="#detay" class="btn">
+Daveti Gör
+</a>
+
+</div>
+
+</div>
+
+<div class="section" id="detay">
+
+<h2>2 Mayıs 2026</h2>
+
+<h3>Saat 19:00</h3>
+
+<p>
+Bu özel günümüzde sizleri aramızda görmekten mutluluk duyarız.
+</p>
+
+<div class="countdown" id="countdown"></div>
+
+<a class="mapbtn" href="https://maps.app.goo.gl/5oX1KUdhjNtoa1Hy5?g_st=ic" target="_blank">
+📍 Yol Tarifi
+</a>
+
+<br>
+
+<a class="whatsapp" href="https://wa.me/?text=Ekrem%20ve%20R%C3%BCveyda%20d%C3%BC%C4%9F%C3%BCn%20davetine%20geliyorum" target="_blank">
+💬 Katılacağım
+</a>
+
+</div>
+
+<audio controls autoplay loop style="position:fixed;bottom:10px;left:10px;">
+<source src="https://dl.sndup.net/h4kx/Gokhan_Turkmen_-_Ask.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+var countDate = new Date("May 2, 2026 19:00:00").getTime();
+
+setInterval(function(){
+
+var now = new Date().getTime();
+
+var distance = countDate - now;
+
+var days = Math.floor(distance / (1000*60*60*24));
+var hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+var minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+var seconds = Math.floor((distance%(1000*60))/1000);
+
+document.getElementById("countdown").innerHTML =
+"💍 Düğüne Kalan Süre<br>"+days+" Gün "+hours+" Saat "+minutes+" Dakika "+seconds+" Saniye";
+
+},1000);
+
+
+/* kalpler */
+
+setInterval(function(){
+
+var heart = document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=(Math.random()*20+10)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{heart.remove()},6000);
+
+},400);
+
+</script>
+
+</body>
+</html>
