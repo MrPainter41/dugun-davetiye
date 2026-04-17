@@ -2,220 +2,219 @@
 <html lang="tr">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rüveyda & Ekrem</title>
 
-<title>Rüveyda & Ekrem</title>
+  <!-- WhatsApp önizleme meta tagleri -->
+  <meta property="og:title" content="Rüveyda & Ekrem Düğün Davetiyesi">
+  <meta property="og:description" content="2 Mayıs 2026 - Bu özel günümüzde sizleri aramızda görmekten mutluluk duyarız.">
+  <meta property="og:image" content="https://mrpainter41.github.io/dugun-davetiye/foto.jpg">
+  <meta property="og:url" content="https://mrpainter41.github.io/dugun-davetiye/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
 
-<!-- ✅ WHATSAPP ÖNİZLEME META TAGLER -->
-<meta property="og:title" content="Rüveyda & Ekrem Düğün Davetiyesi">
-<meta property="og:description" content="2 Mayıs 2026 - Bu özel günümüzde sizleri aramızda görmekten mutluluk duyarız.">
-<meta property="og:image" content="https://mrpainter41.github.io/dugun-davetiye/foto.jpg">
-<meta property="og:url" content="https://mrpainter41.github.io/dugun-davetiye/foto.jpg">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
+  <style>
+    body{
+      margin:0;
+      font-family:'Georgia', serif;
+      background:#000;
+      color:white;
+      text-align:center;
+      overflow-x:hidden;
+    }
 
-<style>
+    .hero{
+      height:100vh;
+      background:url("foto.jpg") center/cover no-repeat;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      position:relative;
+    }
 
-body{
-margin:0;
-font-family: 'Georgia', serif;
-background:#000;
-color:white;
-text-align:center;
-overflow-x:hidden;
-}
+    .overlay{
+      position:absolute;
+      width:100%;
+      height:100%;
+      background:rgba(0,0,0,0.45);
+      backdrop-filter:blur(2px);
+    }
 
-.hero{
-height:100vh;
-background:url("foto.jpg") center/cover no-repeat;
-display:flex;
-align-items:center;
-justify-content:center;
-flex-direction:column;
-position:relative;
-}
+    .content{
+      position:relative;
+      z-index:2;
+      animation:fade 2s ease;
+    }
 
-.overlay{
-position:absolute;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.45);
-backdrop-filter: blur(2px);
-}
+    h1{
+      font-size:38px;
+      margin:10px;
+    }
 
-.content{
-position:relative;
-z-index:2;
-animation:fade 2s ease;
-}
+    .names{
+      font-size:42px;
+      font-weight:bold;
+      margin:20px;
+    }
 
-h1{
-font-size:38px;
-margin:10px;
-}
+    .btn{
+      background:#c2185b;
+      padding:14px 26px;
+      border-radius:30px;
+      color:white;
+      text-decoration:none;
+      font-size:18px;
+      display:inline-block;
+      margin-top:20px;
+    }
 
-.names{
-font-size:42px;
-font-weight:bold;
-margin:20px;
-}
+    .section{
+      padding:60px 20px;
+      background:#fff;
+      color:#333;
+    }
 
-.btn{
-background:#c2185b;
-padding:14px 26px;
-border-radius:30px;
-color:white;
-text-decoration:none;
-font-size:18px;
-display:inline-block;
-margin-top:20px;
-}
+    .countdown{
+      font-size:28px;
+      margin-top:20px;
+      font-weight:bold;
+    }
 
-.section{
-padding:60px 20px;
-background:#fff;
-color:#333;
-}
+    .mapbtn{
+      background:#c2185b;
+      padding:12px 20px;
+      border-radius:25px;
+      color:white;
+      text-decoration:none;
+      display:inline-block;
+      margin-top:20px;
+    }
 
-.countdown{
-font-size:28px;
-margin-top:20px;
-font-weight:bold;
-}
+    .music-btn{
+      position:fixed;
+      bottom:10px;
+      left:10px;
+      z-index:9999;
+      background:#c2185b;
+      color:white;
+      border:none;
+      padding:12px 18px;
+      border-radius:25px;
+      font-size:16px;
+      cursor:pointer;
+      box-shadow:0 4px 12px rgba(0,0,0,0.25);
+    }
 
-.mapbtn{
-background:#c2185b;
-padding:12px 20px;
-border-radius:25px;
-color:white;
-text-decoration:none;
-display:inline-block;
-margin-top:20px;
-}
+    @keyframes fade{
+      from{opacity:0; transform:translateY(20px)}
+      to{opacity:1; transform:translateY(0)}
+    }
 
-.whatsapp{
-background:#25D366;
-padding:12px 20px;
-border-radius:25px;
-color:white;
-text-decoration:none;
-display:inline-block;
-margin-top:10px;
-}
+    .heart{
+      position:fixed;
+      bottom:-10px;
+      font-size:20px;
+      color:#ff4d6d;
+      animation:hearts 6s linear infinite;
+      pointer-events:none;
+    }
 
-@keyframes fade{
-from{opacity:0; transform:translateY(20px)}
-to{opacity:1; transform:translateY(0)}
-}
-
-/* kalp animasyonu */
-
-.heart{
-position:fixed;
-bottom:-10px;
-font-size:20px;
-color:#ff4d6d;
-animation:hearts 6s linear infinite;
-}
-
-@keyframes hearts{
-0%{transform:translateY(0); opacity:1}
-100%{transform:translateY(-100vh); opacity:0}
-}
-
-</style>
-
+    @keyframes hearts{
+      0%{transform:translateY(0); opacity:1}
+      100%{transform:translateY(-100vh); opacity:0}
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="hero">
+  <div class="hero">
+    <div class="overlay"></div>
 
-<div class="overlay"></div>
+    <div class="content">
+      <h1>Düğünümüze Davetlisiniz</h1>
 
-<div class="content">
+      <div class="names">
+        Rüveyda KUZU & Ekrem KIVANÇ
+      </div>
 
-<h1>Düğünümüze Davetlisiniz</h1>
+      <a href="#detay" class="btn">Daveti Gör</a>
+    </div>
+  </div>
 
-<div class="names">
-Rüveyda KUZU & Ekrem KIVANÇ
-</div>
+  <div class="section" id="detay">
+    <h2>2 Mayıs 2026</h2>
+    <h3>Saat 19:00</h3>
 
-<a href="#detay" class="btn">
-Daveti Gör
-</a>
+    <p>
+      Bu özel günümüzde sizleri aramızda görmekten mutluluk duyarız.
+    </p>
 
-</div>
+    <div class="countdown" id="countdown"></div>
 
-</div>
+    <a class="mapbtn" href="https://maps.app.goo.gl/5oX1KUdhjNtoa1Hy5?g_st=ic" target="_blank">
+      📍 Yol Tarifi
+    </a>
+  </div>
 
-<div class="section" id="detay">
+  <button id="musicBtn" class="music-btn">🎵 Müziği Başlat</button>
 
-<h2>2 Mayıs 2026</h2> 
+  <audio id="bgMusic" loop>
+    <source src="muzik.mp3" type="audio/mpeg">
+    Tarayıcınız ses öğesini desteklemiyor.
+  </audio>
 
-<h3>Saat 19:00</h3>
+  <script>
+    var countDate = new Date("May 2, 2026 19:00:00").getTime();
 
-<p>
-Bu özel günümüzde sizleri aramızda görmekten mutluluk duyarız.
-</p>
+    setInterval(function(){
+      var now = new Date().getTime();
+      var distance = countDate - now;
 
-<div class="countdown" id="countdown"></div>
+      var days = Math.floor(distance / (1000*60*60*24));
+      var hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+      var minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+      var seconds = Math.floor((distance % (1000*60)) / 1000);
 
-<a class="mapbtn" href="https://maps.app.goo.gl/5oX1KUdhjNtoa1Hy5?g_st=ic" target="_blank">
-📍 Yol Tarifi
-</a>
+      document.getElementById("countdown").innerHTML =
+        "Son<br>" + days + " Gün " + hours + " Saat " + minutes + " Dakika " + seconds + " Saniye";
+    }, 1000);
 
-<br>
+    setInterval(function(){
+      var heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "💃🏻 🕺🏻";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+      document.body.appendChild(heart);
 
-</div>
+      setTimeout(function(){
+        heart.remove();
+      }, 6000);
+    }, 400);
 
-<audio controls autoplay loop style="position:fixed;bottom:10px;left:10px;">
-<source src="https://dl.sndup.net/h4kx/Gokhan_Turkmen_-_Ask.mp3" type="audio/mpeg">
-</audio>
+    const music = document.getElementById("bgMusic");
+    const musicBtn = document.getElementById("musicBtn");
 
-<script>
-
-var countDate = new Date("May 2, 2026 19:00:00").getTime();
-
-setInterval(function(){
-
-var now = new Date().getTime();
-
-var distance = countDate - now;
-
-var days = Math.floor(distance / (1000*60*60*24));
-var hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-var minutes = Math.floor((distance%(1000*60*60))/(1000*60));
-var seconds = Math.floor((distance%(1000*60))/1000);
-
-document.getElementById("countdown").innerHTML =
-"Düğüne Kalan Süre<br>"+days+" Gün "+hours+" Saat "+minutes+" Dakika "+seconds+" Saniye";
-
-},1000);
-
-/* kalpler */
-
-setInterval(function(){
-
-var heart = document.createElement("div");
-
-heart.className="heart";
-
-heart.innerHTML="💃🏻 🕺🏻";
-
-heart.style.left=Math.random()*100+"vw";
-
-heart.style.fontSize=(Math.random()*20+10)+"px";
-
-document.body.appendChild(heart);
-
-setTimeout(()=>{heart.remove()},6000);
-
-},400);
-
-</script>
+    musicBtn.addEventListener("click", function () {
+      if (music.paused) {
+        music.play()
+          .then(function () {
+            musicBtn.innerHTML = "⏸ Müziği Durdur";
+          })
+          .catch(function (err) {
+            console.log("Müzik başlatılamadı:", err);
+            alert("Müzik başlatılamadı. 'muzik.mp3' dosyasının yüklenmiş olduğundan emin ol.");
+          });
+      } else {
+        music.pause();
+        musicBtn.innerHTML = "🎵 Müziği Başlat";
+      }
+    });
+  </script>
 
 </body>
 </html>
