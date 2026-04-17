@@ -7,7 +7,6 @@
 
   <title>Rüveyda & Ekrem</title>
 
-  <!-- WhatsApp önizleme meta tagleri -->
   <meta property="og:title" content="Rüveyda & Ekrem Düğün Davetiyesi">
   <meta property="og:description" content="2 Mayıs 2026 - Bu özel günümüzde sizleri aramızda görmekten mutluluk duyarız.">
   <meta property="og:image" content="https://mrpainter41.github.io/dugun-davetiye/foto.jpg">
@@ -105,7 +104,6 @@
       border-radius:25px;
       font-size:16px;
       cursor:pointer;
-      box-shadow:0 4px 12px rgba(0,0,0,0.25);
     }
 
     @keyframes fade{
@@ -162,9 +160,9 @@
 
   <button id="musicBtn" class="music-btn">🎵</button>
 
-  <audio id="bgMusic" loop>
+  <!-- 🔊 AUTOPLAY AKILLI SİSTEM -->
+  <audio id="bgMusic" autoplay loop muted>
     <source src="muzik.mp3" type="audio/mpeg">
-    Tarayıcınız ses öğesini desteklemiyor.
   </audio>
 
   <script>
@@ -199,19 +197,34 @@
     const music = document.getElementById("bgMusic");
     const musicBtn = document.getElementById("musicBtn");
 
+    /* SAYFA AÇILINCA DENİYOR */
+    window.addEventListener("load", function () {
+      music.muted = true;
+
+      music.play().then(() => {
+        setTimeout(() => {
+          music.muted = false;
+        }, 500);
+      }).catch(() => {});
+    });
+
+    /* İLK TIKTA KESİN BAŞLAT */
+    document.addEventListener("click", function () {
+      if (music.paused) {
+        music.muted = false;
+        music.play();
+      }
+    }, { once: true });
+
+    /* BUTON */
     musicBtn.addEventListener("click", function () {
       if (music.paused) {
-        music.play()
-          .then(function () {
-            musicBtn.innerHTML = "⏸ Müziği Durdur";
-          })
-          .catch(function (err) {
-            console.log("Müzik başlatılamadı:", err);
-            alert("Müzik başlatılamadı. 'muzik.mp3' dosyasının yüklenmiş olduğundan emin ol.");
-          });
+        music.muted = false;
+        music.play();
+        musicBtn.innerHTML = "⏸";
       } else {
         music.pause();
-        musicBtn.innerHTML = "🎵 Müziği Başlat";
+        musicBtn.innerHTML = "🎵";
       }
     });
   </script>
